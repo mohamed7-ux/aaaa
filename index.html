@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>ONE KATTAMEYA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #000;
+            overflow: hidden;
+        }
+
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 120px;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url("https://postimg.cc/K12t4XS6");
+            background-size: cover;
+            background-position: center top;
+            animation: liveZoom 22s ease-in-out infinite alternate;
+            z-index: 1;
+        }
+
+        @keyframes liveZoom {
+            0%   { transform: scale(1); }
+            100% { transform: scale(1.06); }
+        }
+
+        /* طبقة تغطي الكلام اللي فوق */
+        .top-cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 280px;          /* غطي بيه الكلام */
+            background: linear-gradient(to bottom, 
+                rgba(0,0,0,0.65) 0%, 
+                rgba(0,0,0,0.35) 60%, 
+                transparent 100%);
+            z-index: 3;
+        }
+
+       .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.10);
+    z-index: 2;
+}
+        .details-btn {
+            position: relative;
+            z-index: 10;
+            padding: 18px 52px;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.45);
+            color: white;
+            font-size: 20px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.35s ease;
+            animation: btnGlow 2.8s ease-in-out infinite;
+        }
+
+        @keyframes btnGlow {
+            0%, 100% {
+                box-shadow: 0 0 12px rgba(255, 255, 255, 0.25),
+                            0 0 25px rgba(255, 255, 255, 0.1);
+            }
+            50% {
+                box-shadow: 0 0 22px rgba(255, 255, 255, 0.5),
+                            0 0 45px rgba(255, 255, 255, 0.2);
+            }
+        }
+
+        .details-btn:hover {
+            background: rgba(255, 255, 255, 0.22);
+            transform: scale(1.07);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.45);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <div class="hero-bg"></div>
+        <div class="overlay"></div>
+        
+        <!-- دي الطبقة اللي بتخفي الكلام -->
+        <div class="top-cover"></div>
+
+        <a href="#" class="details-btn">التفاصيل</a>
+    </div>
+
+</body>
+</html>
